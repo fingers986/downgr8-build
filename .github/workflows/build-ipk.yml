@@ -1,1 +1,23 @@
+name: Build IPK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up dependencies
+        run: sudo apt-get update && sudo apt-get install -y dpkg-dev coreutils
+
+      - name: Build IPK
+        run: make -C .
+
+      - name: Upload built IPK
+        uses: actions/upload-artifact@v3
+        with:
+          name: downgr8-ipk
+          path: lol.downgr8_0.0.1_all.ipk
 
