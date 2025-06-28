@@ -1,0 +1,11 @@
+{
+    "id": "@APP_ID@",
+    "title": "downgr8",
+    "main": "launch.sh",
+    "type": "native",
+    "icon": "icon_80x80.png",
+    "iconColor": "#2060b0",
+    "version": "@VERSION@",
+    "noSplashOnLaunch": true,
+    "spinnerOnLaunch": false
+}
