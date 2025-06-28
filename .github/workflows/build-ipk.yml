@@ -1,7 +1,7 @@
 name: Build IPK
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # 👈 Cái này cho phép bạn chạy thủ công từ tab "Actions"
 
 jobs:
   build:
@@ -17,15 +17,11 @@ jobs:
 
       - name: Build IPK
         run: |
-          make clean
+          make clean || true
           make
-
-      - name: List files
-        run: ls -lh
 
       - name: Upload built IPK
         uses: actions/upload-artifact@v3
         with:
           name: downgr8-ipk
           path: lol.downgr8_0.0.1_all.ipk
- 
